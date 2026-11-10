@@ -17,7 +17,6 @@ def clean_lineups(input_file, output_file):
     lineups = lineups.drop_duplicates(
         subset=["festival", "year", "artist_alias", "type"]
     )
-    duplicates_removed = rows_before - len(lineups)
 
     # Sort values again
     lineups = lineups.sort_values(
