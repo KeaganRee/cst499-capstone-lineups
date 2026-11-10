@@ -1,5 +1,6 @@
 #Uses Pandas to clean up raw lineup data and fix any errors present
 import pandas as pd
+from pathlib import Path
 
 def clean_lineups(input_file, output_file):
     # Read in raw data
@@ -22,6 +23,9 @@ def clean_lineups(input_file, output_file):
     lineups = lineups.sort_values(
         by=["festival", "year", "artist_alias"]
     )
+
+    #  Make directory (just in case)
+    Path(output_file).parent.mkdir(parents=True, exist_ok=True)
 
     # Save preprocessed data
     lineups.to_csv(output_file, index=False)
