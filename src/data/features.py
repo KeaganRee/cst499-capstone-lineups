@@ -45,7 +45,6 @@ def create_historical_features(input_path, output_path):
             "festival": festival,
             "year": year,
             "artist_alias": artist,
-            "is_b2b": int(row["type"] == "b2b"),
 
             "artist_total_prior_appearances": len(artist_history),
             "artist_festival_prior_appearances": len(festival_history),
@@ -53,9 +52,6 @@ def create_historical_features(input_path, output_path):
                 other_festival_history
             ),
             "years_since_festival_appearance": years_since_appearance,
-            "prior_b2b_appearances": int(
-                (artist_history["type"] == "b2b").sum()
-            ),
             "festival_previous_year_size": len(previous_year_rows),
 
             # This row represents an actual lineup appearance
