@@ -67,5 +67,5 @@ def create_historical_features(input_path, output_path):
 if __name__ == "__main__":
     create_historical_features(
         "data/processed/lineups_clean.csv",
-        "data/processed/lineup_features.csv"
+        "data/processed/features.csv"
     )
